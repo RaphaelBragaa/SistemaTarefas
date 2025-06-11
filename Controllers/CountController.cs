@@ -19,11 +19,13 @@ public class ContaController : ControllerBase
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> LoginAsync([FromBody] LoginModel login)
+    public async Task<IActionResult> LoginAsync([FromBody] UserModel login)
     {
-        var user = await _userRepositorie.GetUserByEmail(login.Email);
 
-        if (user == null || user.Password != login.Password)
+        var user = await _userRepositorie.GetUserByEmail(login.Email);
+        Console.WriteLine("Cheguei n o login");
+
+        if (user == null || !BCrypt.Net.BCrypt.Verify(login.Password, user.Password))
         {
             return BadRequest(new
             {

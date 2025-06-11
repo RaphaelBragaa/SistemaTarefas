@@ -76,10 +76,10 @@ C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debu
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SistemaTarefa.props
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SistemaTarefa.props
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\SistemaT.760D65BC.Up2Date
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\SistemaTarefa.dll
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\refint\SistemaTarefa.dll
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\SistemaTarefa.pdb
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\SistemaTarefa.genruntimeconfig.cache
 C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\ref\SistemaTarefa.dll
+C:\Users\Raphael\Documents\Projetos\Estudos\SistemaTarefa\SistemaTarefa\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt

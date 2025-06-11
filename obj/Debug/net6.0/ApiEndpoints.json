@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "login",
-        "Type": "SistemaTarefa.Models.LoginModel",
+        "Type": "UserModel",
         "IsRequired": true
       }
     ],

@@ -34,8 +34,6 @@ namespace SistemaTarefa.Repositories
                 throw new Exception("Este e-mail já está cadastrado!");
             }
 
-            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-
             await _dbContext.Users.AddAsync(user);
             await _dbContext.SaveChangesAsync();
             return user;
@@ -85,6 +83,5 @@ namespace SistemaTarefa.Repositories
         {
             return await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
-
     }
 }

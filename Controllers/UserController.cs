@@ -57,8 +57,14 @@ namespace SistemaTarefa.Controllers
             {
                 return BadRequest("E-mail já cadastrado.");
             }
-
+            Console.WriteLine("Cheguei no cadastro");
+            Console.WriteLine($"Senha do User:{userModel.Password}");
+            string testP = userModel.Password;
             userModel.Password = BCrypt.Net.BCrypt.HashPassword(userModel.Password);
+            string hash = userModel.Password;
+            Console.WriteLine($"Hash do User:{userModel.Password}");
+            Console.WriteLine($"Usuário encontrado: Status={BCrypt.Net.BCrypt.Verify(testP, hash)}");
+
 
             var user = await _userRepositorie.Add(userModel);
 

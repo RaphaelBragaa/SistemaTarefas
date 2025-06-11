@@ -14,12 +14,16 @@ namespace SistemaTarefa
     {
         public static void Main(string[] args)
         {
-            string SecretKey = "7fddc1c5-7654-4501-b5d2-a7dd6df1a5c7";
             var builder = WebApplication.CreateBuilder(args);
+            var jwtSettings = builder.Configuration.GetSection("Jwt");
+            var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
 
-            // Add services to the container.
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
+
+            builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
+
 
             // Configuração do Swagger com JWT
             builder.Services.AddSwaggerGen(c =>
@@ -48,22 +52,16 @@ namespace SistemaTarefa
                 });
             });
 
-            builder.Services.AddEntityFrameworkSqlServer()
-                .AddDbContext<SystemTaskDBContext>(
-                    options => options.UseSqlServer(
-                        builder.Configuration.GetConnectionString("DataBase")
-                    )
-                );
+            builder.Services.AddDbContext<SystemTaskDBContext>(
+    options => options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DataBase")
+    )
+);
+
 
             builder.Services.AddScoped<IUserRepositorie, UserRepositorie>();
             builder.Services.AddScoped<ITaskRepositorie, TaskRepositorie>();
             builder.Services.AddScoped<TokenService>();
-
-
-            // Configuração do CORS para permitir acesso do React
-          
-
-
 
             builder.Services.AddAuthentication(options =>
             {
@@ -78,9 +76,9 @@ namespace SistemaTarefa
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "sua_empresa",
-                    ValidAudience = "sua_aplicacao",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretKey))
+                    ValidIssuer = jwtSettings["Issuer"],
+                    ValidAudience = jwtSettings["Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
                 };
             });
 

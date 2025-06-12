@@ -38,9 +38,9 @@ O objetivo é fornecer uma base robusta para aplicações que exijam controle de
 - **ASP.NET Core** – Framework principal da aplicação
 - **Entity Framework Core** – ORM para acesso a dados
 - **Swagger/OpenAPI** – Documentação e testes interativos dos endpoints
-- **JWT (JSON Web Token)** – Autenticação e autorização segura[^12]
-- **BCrypt** – Hash de senhas para segurança dos usuários[^12]
-- **Docker** – Conteinerização para ambientes de desenvolvimento e produção[^13]
+- **JWT (JSON Web Token)** – Autenticação e autorização segura
+- **BCrypt** – Hash de senhas para segurança dos usuários
+- **Docker** – Conteinerização para ambientes de desenvolvimento e produção
 - **SQL Server** (ou outro banco relacional) – Persistência dos dados
 
 ---
@@ -63,7 +63,7 @@ Endpoints principais:
 ### Pré-requisitos
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) (opcional, para ambiente isolado)[^13]
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) (opcional, para ambiente isolado)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (ou outro banco relacional)
 
 
@@ -136,6 +136,6 @@ A API utiliza autenticação JWT. Para acessar os endpoints protegidos, faça lo
 Authorization: Bearer {seu_token_jwt}
 ```
 
-A documentação Swagger está configurada para aceitar tokens JWT, facilitando os testes interativos[^2][^12].
+A documentação Swagger está configurada para aceitar tokens JWT, facilitando os testes interativos.
 
 ---
